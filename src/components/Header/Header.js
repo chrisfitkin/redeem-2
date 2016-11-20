@@ -40,8 +40,11 @@ export const Header = () => (
       title={"Redeem"}
       iconElementRight={<HeaderMenu />}
     />
-    <h1>React Redux Starter Kit</h1>
     <IndexLink to='/' activeClassName='route--active'>Home</IndexLink>
+    {' · '}
+    <Link to='/brands' activeClassName='route--active'>
+      Brands
+    </Link>
     {' · '}
     <Link to='/counter' activeClassName='route--active'>
       Counter
