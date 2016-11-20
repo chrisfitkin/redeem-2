@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import createStore from './store/createStore'
 import AppContainer from './containers/AppContainer'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+
 
 // ========================================================
 // Store Instantiation
@@ -62,6 +64,7 @@ if (__DEV__) {
   }
 }
 
+injectTapEventPlugin();
 // ========================================================
 // Go!
 // ========================================================
