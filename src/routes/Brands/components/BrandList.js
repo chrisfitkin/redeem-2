@@ -1,16 +1,20 @@
 import React, { PropTypes } from 'react'
 import Brand from './Brand'
+import '../../../styles/FlexBox.scss'
 
+const style = {
+   margin: '0 auto',
+   maxWidth: 1100
+}
 
-export const Brands = (props) => (
-  <div style={{ margin: '0 auto' }} >
-    <h2>Brands: </h2>
-    {props.brands.map(brand =>
-      <Brand
-        key={brand.id}
-        {...brand}
-      />
-    )}
+export const BrandList = (props) => (
+  <div style={style} className={'cards-container'}>
+      {props.brandList.map(brand =>
+        <Brand
+          key={brand.id}
+          {...brand}
+        />
+      )}
   </div>
 )
 // {props.brands}
@@ -28,8 +32,8 @@ export const Brands = (props) => (
 //   </div>
 // )
 
-Brands.propTypes = {
-  brands: PropTypes.arrayOf(PropTypes.shape({
+BrandList.propTypes = {
+  brandList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     products: PropTypes.array.isRequired
@@ -39,4 +43,4 @@ Brands.propTypes = {
   // increment   : React.PropTypes.func.isRequired
 }
 
-export default Brands
+export default BrandList

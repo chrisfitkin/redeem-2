@@ -6,7 +6,7 @@ import { increment, doubleAsync } from '../modules/brands'
     wiring in the actions and state necessary to render a presentational
     component - in this case, the brands:   */
 
-import Brands from '../components/Brands'
+import BrandList from '../components/BrandList'
 
 /*  Object of action creators (can also be function that returns object).
     Keys will be passed as props to presentational components. Here we are
@@ -18,7 +18,7 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
-  brands : state.brands
+  brandList : state.brands.brandList
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => ({
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
-export default connect(mapStateToProps, mapDispatchToProps)(Brands)
+export default connect(mapStateToProps, mapDispatchToProps)(BrandList)
